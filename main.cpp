@@ -1,19 +1,21 @@
-#include <QCoreApplication>
+#include <iostream>
+using namespace std;
 
-int main(int argc, char *argv[])
+int main()
 {
-    QCoreApplication a(argc, argv);
+    int n;
+    cout<<"Ingresa el numero de la base: "; cin >> n;
 
-    // Set up code that uses the Qt event loop here.
-    // Call a.quit() or a.exit() to quit the application.
-    // A not very useful example would be including
-    // #include <QTimer>
-    // near the top of the file and calling
-    // QTimer::singleShot(5000, &a, &QCoreApplication::quit);
-    // which quits the application after 5 seconds.
+    for(int fila=1; fila <= n; fila++){
+        for (int asterisco=1; asterisco <= fila; asterisco++) cout<<"*";
+        for (int espacios=1; espacios <= (n-fila)*2; espacios++) cout<<" "; // Este for imprime (n-fila)*2 espacios en cada iteración.
+        for (int asterisco=1; asterisco <= fila; asterisco++) cout<<"*";
 
-    // If you do not need a running Qt event loop, remove the call
-    // to a.exec() or use the Non-Qt Plain C++ Application template.
+        cout<<endl;
 
-    return a.exec();
+
+    }
+
+
+    return 0;
 }
